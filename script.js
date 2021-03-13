@@ -11,16 +11,15 @@ generateBtn.addEventListener("click", generatePassword); // makes generate butto
 var password = ""; //the password that will be displayed in text box
 
 //Write password to the #password input
-function createPassword(word) {  //word is a placeholder for the value of password text, so something shows in the textbox
+function createPassword(word) {  //word is a placeholder for the value of password text, password will display in the textbox
 
   var passwordText = document.querySelector("#password");
   passwordText.value = word;
 }
 
 function generatePassword() {
-  var userChoice = ""; //user input for confirms
-  var passLength = parseInt(window.prompt("How many characters would you like the password to be?"));
-  //var password = generatePassword(userChoice);
+  var userChoice = ""; //user input for confirm choices below
+  var passLength = parseInt(window.prompt("How many characters would you like the password to be?")); // converts users input into a integer
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
   console.log(passLength);
@@ -38,7 +37,7 @@ else if (passLength < 8 ) { //validation for minimum password length
   return;
 }
 
-else { // confirm pop up to allow user to choose to include special characters, lowercase letters, uppercase letters, and numbers
+else { // confirm window pop ups to allow user to choose whether to include special characters, lowercase letters, uppercase letters, and numbers
   var isSpecChosen = window.confirm("click OK to confirm including special characters");
   console.log(isSpecChosen);
   var isLowerCase = window.confirm("click OK to confirm including lowercase characters");
@@ -47,13 +46,15 @@ else { // confirm pop up to allow user to choose to include special characters, 
   console.log(isUpperCase);
   var isNumber = window.confirm("click OK to confirm including numeric characters");
 }
-if (!isSpecChosen && !isLowerCase && !isUpperCase && !isNumber) { //validation for not choosing any type of characters
+if (!isSpecChosen && !isLowerCase && !isUpperCase && !isNumber) { //validation for if user does not choose any type of characters from confirms
   alert("You didn't choose a character type!");
   return;
 
 }
-if (isSpecChosen){
-  userChoice = userChoice.concat(specialCharacters);
+//if user clicks okay on confirms, then their specified character will concatonate. 
+//If user clicks cancel for the confirm, it will not run the corresponding line of code
+if (isSpecChosen){ 
+  userChoice = userChoice.concat(specialCharacters); 
 }
 if (isLowerCase){
   userChoice = userChoice.concat(lowerCase);
@@ -73,9 +74,9 @@ function writePassword(length, choice) { //taking user choices into consideratio
 
 
   var password = "";
-for ( var i = 0; i < length; i++) {
+for ( var i = 0; i < length; i++) { // for loop - to create password based off of prompt user input and user confirm choices.
   password += choice.charAt(Math.floor(Math.random() * choice.length));
   console.log("goodafternoon", password) //used for testing
   }  
-  createPassword(password);
+  createPassword(password); //writes password based on users choice for password length as well as their confirms
 }
