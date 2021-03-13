@@ -13,4 +13,4 @@ After the user has answered all of the prompts, a password that matches their se
 Github Repository: https://github.com/wilks625/PasswordGenerator
 App URL: https://wilks625.github.io/PasswordGenerator/
 
-![](images/screenshot.png)
+<img src="images/Screenshot.png">
