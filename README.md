@@ -9,3 +9,8 @@ When The generate password button is clicked, a prompt will display, asking the 
 After the user enters their password length, a series of confirm pop up boxes will display. If the user clicks "ok", then it will include those characters. If the user selects "cancel" then those characters will not be included in the generated password. If no character types are chosen to be included, no password will be generated.
 
 After the user has answered all of the prompts, a password that matches their selected criteria will be generated and displayed in the text box above the generate password button.
+
+Github Repository: https://github.com/wilks625/PasswordGenerator
+App URL: https://wilks625.github.io/PasswordGenerator/
+
+![](images/screenshot)
